@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Student Marks Table</title>
+    <style>
+        /* Table styling */
+        #studentTable {
+            border-collapse: collapse;
+            /* Remove double borders */
+        }
+
+        /* Column styling */
+        th,
+        td {
+            width: 100px;
+            /* Fixed width for all cells */
+            height: 40px;
+            /* Fixed height for all cells */
+            text-align: center;
+            /* Center the text */
+            border: 1px solid black;
+            /* Single line border */
+        }
+
+        /* Completely hidden headers */
+        .hidden {
+            visibility: hidden;
+            border: none;
+            /* Remove the border */
+        }
+
+        /* Style the container holding the table and buttons */
+        .container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Style the button container */
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            /* Reduced space between buttons */
+        }
+
+        /* Style individual buttons */
+        .button-container button {
+            background-color: #4CAF50;
+            /* Green background */
+            border: none;
+            color: white;
+            /* White text */
+            padding: 10px 20px;
+            /* Reduced padding */
+            text-align: center;
+            font-size: 14px;
+            /* Smaller font size */
+            cursor: pointer;
+            /* Cursor changes to hand icon */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+
+        <table id="studentTable">
+            <thead>
+                <tr>
+                    <th class="hidden">Name</th>
+                    <th class="hidden">Gender</th>
+                    <th>Math</th>
+                    <th>Geography</th>
+                    <th>Biology</th>
+                    <th>English</th>
+                    <th>Chemistry</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+                <!-- Rows will be inserted here -->
+            </tbody>
+        </table>
+
+        <div class="side-panel">
+            <div class="button-container">
+                <button onclick="displayGPAs()">Display GPA's of each student</button>
+                <button onclick="displaySubjectAverages()">Display Subject Averages</button>
+                <button onclick="displayStudentHighLow()">Display High/Low Marks for Each Student</button>
+                <button onclick="displaySubjectHighLow()">Display High/Low Marks for Each Subject</button>
+                <button id="sortStudentsButton" onclick="sortStudentsByGPA()">Display Students Sort by GPA ↓</button>
+                <button id="sortSubjectsButton" onclick="sortSubjectsByAverage()">Display Subjects Sort by Average ↓</button>
+                <button onclick="compareSubjectToClassAverage()">List Subjects Higer/Lower than Class Average</button>
+                <button onclick="compareStudentToClassAverage()">List Students Higer/Lower than Class Average</button>
+                <button onclick="subjectsWhereFemalesAreBetter()">List Subjects Where Females Are Better</button>
+                <button onclick="subjectsWhereMalesAreBetter()">List Subjects Where Males Are Better</button>
+            </div>
+            <div id="output-container">
+                <!-- Output from button actions will be displayed here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="LabTest5.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LabTest Fast Type Gaming</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.9.24/paper-full.min.js"></script>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* This will center the elements horizontally */
+        }
+
+        #livesDisplay {
+            font-size: 24px;
+            /* Adjust size as needed */
+            color: red;
+            position: absolute;
+            /* This allows you to position the lives display independently */
+            top: 10px;
+            /* Adjust as needed to set the vertical position */
+            left: 10px;
+            /* Adjust as needed to set the horizontal position */
+        }
+
+        #canvas {
+            border: 1px solid black;
+            width: 900px;
+        }
+
+        #inputField {
+            font-size: 24px;
+            /* Makes text input larger */
+            width: 80%;
+            margin-top: 10px;
+            /* Adds some space between the canvas and the input field */
+            padding: 10px;
+            /* Adds some padding inside the input field */
+            text-align: center;
+            /* Centers text within the input field */
+        }
+
+        #scoreDisplay {
+            font-size: 24px;
+            /* Adjust size as needed */
+            color: blue;
+            position: absolute;
+            /* This allows you to position the score display independently */
+            top: 10px;
+            /* Adjust as needed to set the vertical position */
+            right: 10px;
+            /* Adjust as needed to set the horizontal position */
+        }
+
+        #rankingContainer {
+            position: absolute;
+            left: 10px;
+            top: 0;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            /* This will center the scoreList vertically */
+        }
+
+        #scoreList {
+            background-color: #f0f0f0;
+            /* Light grey background */
+            border: 1px solid #ccc;
+            /* Grey border */
+            padding: 10px;
+            width: 100px;
+            /* Adjust width as needed */
+        }
+
+        #scoreList div {
+            margin-bottom: 5px;
+            /* Adds some space between score lines */
+        }
+
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4);
+            /* Black w/ opacity */
+            padding-top: 60px;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+        .close-button {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close-button:hover,
+        .close-button:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>LabTest Fast Type Gaming</h1>
+    <div id="livesDisplay">Lives: 3</div>
+    <div id="levelDisplay">Level: 1</div>
+    <div id="scoreDisplay">Score: 0</div>
+    <div id="rankingContainer">
+        <div id="scoreList">
+            <div>Person 1: 0</div>
+            <div>Person 2: 0</div>
+            <div>Person 3: 0</div>
+            <div>Person 4: 0</div>
+            <div>Person 5: 0</div>
+        </div>
+    </div>
+    <canvas id="canvas" width="900" height="500"></canvas>
+    <input type="text" id="inputField" placeholder="Type the word here and hit ENTER" autofocus>
+    <div id="gameOverModal" class="modal">
+        <div class="modal-content">
+          <span class="close-button" onclick="closeModal()">&times;</span>
+          <p>Game Over</p>
+          <button onclick="restartGame()">Restart</button>
+        </div>
+      </div>
+    <script src="LabTest4.js" canvas="canvas"></script>
+</body>
+
+</html>
