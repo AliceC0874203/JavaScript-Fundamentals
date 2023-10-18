@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1-15 Puzzle Game</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        #puzzle-container {
+            width: 320px;
+            height: 320px;
+            display: grid;
+            grid-template-columns: repeat(4, 80px);
+            grid-gap: 0;
+            margin-bottom: 20px;
+        }
+
+        .tile {
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #000;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>1-15 Puzzle Game</h1> 
+    <div id="puzzle-container">
+    </div>
+    <button id="start-button">Start</button>
+    <!-- <button id="dummy-button">Dummy Winning</button> -->
+
+    <div id="swap-count">Swaps: 0 times</div>
+    <div id="timer">Time: 0 seconds</div>
+    <script src="LabTest6.js"></script>
+</body>
+
+</html>

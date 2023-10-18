@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matching Game</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        #puzzle-container {
+            width: 320px;
+            height: 320px;
+            display: grid;
+            grid-template-columns: repeat(4, 80px);
+            grid-gap: 0;
+            margin-bottom: 20px;
+            /* Added margin */
+        }
+
+        .tile {
+            width: 80px;
+            height: 80px;
+            display: flex;
+            background-size: cover;
+            background-position: center;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #000;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+
+        #winner-table th,
+        #winner-table td {
+            border: 1px solid #000;
+            padding: 8px;
+            text-align: center;
+        }
+
+        #winner-table {
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            width: 100%;
+            /* This will ensure the table takes up the full width available */
+            border: 2px solid #000;
+            /* This will add a border around the entire table */
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Matching Game</h1>
+    <div id="puzzle-container">
+        <!-- Tiles will be generated here by JavaScript -->
+    </div>
+    <button id="start-button">Start</button>
+    <!-- <button id="test-ranking">Test Ranking</button> -->
+    <div id="game-info">
+        <div id="pair-count">Pairs Opened: 0 times</div>
+        <div id="timer">Time: 0 seconds</div>
+    </div>
+    <table id="winner-table">
+        <tr>
+            <th>Rank</th>
+            <th>Time (s)</th>
+            <th>Pairs Opened</th>
+        </tr>
+        <!-- Winner records will be inserted here by JavaScript -->
+    </table>
+    
+
+    <script src="LabTest7.js"></script>
+</body>
+
+</html>
